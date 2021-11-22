@@ -15,4 +15,15 @@
  MONTANT  :214352.00 
     
 
-
+ CIN   :HA1 
+ NOM    :N1
+ PRENOM  :P1 
+ MONTANT  :1323.00 
+ CIN   :HA2 
+ NOM    :N2
+ PRENOM  :P2 
+ MONTANT  :12214.00 
+ CIN   :HA3 
+ NOM    :N3
+ PRENOM  :P3 
+ MONTANT  :2411234.00 

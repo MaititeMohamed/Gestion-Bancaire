@@ -5,7 +5,7 @@
 
 
  //function for add new user 
- void Add_user(FILE *f)
+ void Add_count(FILE *f)
  {
   //struct for defin data
                 typedef struct 
@@ -15,7 +15,6 @@
                  char PRENOM[10];
                  double MONTANT;
                 }users;
-                 
                 users user;
                 printf("CIN :\n");
                 scanf("%s",&user.CIN);
@@ -30,6 +29,37 @@
                 fprintf(f," CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user.CIN,user.NOM,user.PRENOM,user.MONTANT);//for stock data in the fill
                 fclose(f);//close the fill
  }
+ //function for add plusieurs count 
+ void Add_plusieurs_count(FILE *f)
+ {
+     typedef struct 
+                {
+                 char CIN[9];
+                 char NOM[10];
+                 char PRENOM[10];
+                 double MONTANT;
+                }users;
+                users user[100];
+                int nbr,i;
+                f=fopen("BancData.txt", "a");//make fille.txt  
+                printf("Donner le nomber de count :\n");
+                scanf("%d",&nbr);//nbr for condition loop
+                for(i=0;i<=nbr;i++){
+                printf("acount number  %d \n",i);
+                printf("CIN :\n");
+                scanf("%s",&user[i].CIN);
+                printf("NOM :\n");
+                scanf("%s",&user[i].NOM);
+                printf("PRENOM :\n");
+                scanf("%s",&user[i].PRENOM);
+                printf("MONTANT :\n");
+                scanf(" %lf",&user[i].MONTANT);
+                //for stock info in fille 
+                fprintf(f," CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
+                }
+                fclose(f);//close the fill
+
+               }
 
 int main()
 {
@@ -39,7 +69,7 @@ int main()
 //MENU
 int choix; //for switch case
 do{
-printf("************MENU*************************\n");
+printf("*******************MENU******************\n");
 printf("[1].  creer un compte bancaire            \n");
 printf("[2].  creer plusieurs comptes bancaires   \n");
 printf("[3].  Retrait                             \n");
@@ -55,15 +85,15 @@ printf("*****************************************\n");
 //for take the value of choix
 printf("Donner votre choix :\n");
 scanf("%d",&choix);
- //switch case 
+//switch case 
  switch (choix)
    {
         case 1:
           
-              Add_user(fichier);
+              Add_count(fichier);//function for add solo acount
               break;
         case 2:
-                /* code */
+              Add_plusieurs_count(fichier);//function for add plsuer acount
               break;
         case 3:
                 /* code */
