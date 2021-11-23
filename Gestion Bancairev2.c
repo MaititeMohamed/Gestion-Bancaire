@@ -86,10 +86,11 @@ scanf("%d",&choix);
           	do{
         		  
         	       printf("************ Operations ************\n");
-                   printf(" [1]- Retrait \n");
-                   printf(" [2]- Depot\n");
-                   printf(" [3]- retour a menu  \n");
-                   printf("Veuillez choisir une operation: \n");
+                   printf(" [1]  Retrait  Montant \n");
+                   printf(" [2]  Depot    Montant\n");
+                   printf(" [3]  MENU prancipal  \n");
+                   printf("************************************\n");
+                   printf("choisir une operation: \n");
                    scanf("%d",&op);
 		
                         switch (op)
@@ -149,20 +150,22 @@ scanf("%d",&choix);
                           {
                do{
                    printf("************** Affichage **************\n");
-                   printf("[1]- Par Ordre Ascendant \n");
-                   printf("[2]- Par Ordre Descendant\n");
-                   printf("[3]- Par Ordre Ascendant (les comptes bancaires ayant un montant superieur a un chiffre introduit)\n");
-                   printf("[4]- Par Ordre Descendant (les comptes bancaires ayant un montant superieur a un chiffre introduit)\n");
-                   printf("[6]- retour a menu\n");
-                   printf(" choisir une Affichage: ");
+                   printf("[1] Ordre Ascendant \n");
+                   printf("[2] Ordre Descendant\n");
+                   printf("[3] Ordre Ascendant par MAX\n");
+                   printf("[4] Ordre Descendant par MIN\n");
+                   printf("[5] MENU prancipal\n");
+                   printf("  Affichage  par: ");
+                   printf("***************************************\n");
                    scanf("%d",&choix);
                    switch(choix)
                    {
                    case 1:
-                    {
+                    { 
+                        // Ordre Ascendant  par MONTANT
                        int a=nber;
                        users tmp;
-                       int  ech=0;
+                       int  change=0;
                         do
                         {
                              for(i=0;i<a-1;i++)
@@ -173,24 +176,25 @@ scanf("%d",&choix);
                                 user[i+1]=user[i];
                                 user[i]= tmp;
                             }
-                             ech++;
+                             change++;
                         }
 
-                        }while(ech>0);
+                        }while(change>0);
 
                         printf("*****************L'ffichage Par Ordre Ascendant *****************\n");
 
                         for(i=0;i<a;i++)
                         {
-                          printf(" Cin : %s  ,\tNom: %s  ,\t Prenom: %s  ,\t Montant : %.2f dh\n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+                          printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
 
                         }
                     }break;
                   case 2:
                     {
+                        //Ordre Descendant par MONTANT
                         int a=nber;
                         users tmp;
-                        int ech=0;
+                        int change=0;
                         do
                         {
                              for(i=0;i<a-1;i++)
@@ -202,32 +206,29 @@ scanf("%d",&choix);
                                 user[i]= tmp;
 
                             }
-                             ech++;
+                             change++;
                         }
 
-                        }while(ech>0);
+                        }while(change>0);
                        
                                printf("***************** L'ffichage Par Ordre Descendant  *****************\n");
 
                         for(i=0;i<a;i++)
                         {
-                            printf(" Cin : %s  ,\tNom: %s  ,\t Prenom: %s  ,\t Montant : %.2f dh\n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+                            printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
                         }
                     }break;
                   case 3:
                     {
-                        
+                      
 
                     }break;
                   case 4:
                     {
 
                     }break;
+                 
                   case 5:
-                    {
-
-                    }break;
-                  case 6:
                     {
                         goto menu;
 
