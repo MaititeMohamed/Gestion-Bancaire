@@ -146,12 +146,102 @@ scanf("%d",&choix);
               
               break;    
          case 4:
-             for(i=0;i<nber+nbr;i++){
-              printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
-                                 }
+                          {
+               do{
+                   printf("************** Affichage **************\n");
+                   printf("[1]- Par Ordre Ascendant \n");
+                   printf("[2]- Par Ordre Descendant\n");
+                   printf("[3]- Par Ordre Ascendant (les comptes bancaires ayant un montant superieur a un chiffre introduit)\n");
+                   printf("[4]- Par Ordre Descendant (les comptes bancaires ayant un montant superieur a un chiffre introduit)\n");
+                   printf("[6]- retour a menu\n");
+                   printf(" choisir une Affichage: ");
+                   scanf("%d",&choix);
+                   switch(choix)
+                   {
+                   case 1:
+                    {
+                       int a=nber;
+                       users tmp;
+                       int  ech=0;
+                        do
+                        {
+                             for(i=0;i<a-1;i++)
+                        {
+                            if(user[i].MONTANT>user[i+1].MONTANT)
+                            {
+                                tmp=user[i+1];
+                                user[i+1]=user[i];
+                                user[i]= tmp;
+                            }
+                             ech++;
+                        }
+
+                        }while(ech>0);
+
+                        printf("*****************L'ffichage Par Ordre Ascendant *****************\n");
+
+                        for(i=0;i<a;i++)
+                        {
+                          printf(" Cin : %s  ,\tNom: %s  ,\t Prenom: %s  ,\t Montant : %.2f dh\n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+
+                        }
+                    }break;
+                  case 2:
+                    {
+                        int a=nber;
+                        users tmp;
+                        int ech=0;
+                        do
+                        {
+                             for(i=0;i<a-1;i++)
+                        {
+                            if(user[i].MONTANT<user[i+1].MONTANT)
+                            {
+                                tmp=user[i+1];
+                                user[i+1]=user[i];
+                                user[i]= tmp;
+
+                            }
+                             ech++;
+                        }
+
+                        }while(ech>0);
+                       
+                               printf("***************** L'ffichage Par Ordre Descendant  *****************\n");
+
+                        for(i=0;i<a;i++)
+                        {
+                            printf(" Cin : %s  ,\tNom: %s  ,\t Prenom: %s  ,\t Montant : %.2f dh\n\n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+                        }
+                    }break;
+                  case 3:
+                    {
+                        
+
+                    }break;
+                  case 4:
+                    {
+
+                    }break;
+                  case 5:
+                    {
+
+                    }break;
+                  case 6:
+                    {
+                        goto menu;
+
+                    }break;
+
+                   }
+               }while(choix!=6);
+     
+                   }
               break;    
          case 5:
-                
+                 for(i=0;i<nber+nbr;i++){
+              printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
+                                 }
               break;
               case 6:
                 
