@@ -94,7 +94,7 @@ scanf("%d",&choix);
 		
                         switch (op)
 					{
- 						
+ 						//Retrait
                                case 1:
                                    {
                         float so1;
@@ -118,7 +118,23 @@ scanf("%d",&choix);
                         }
 
                     }break;
-                             
+                             //Depot
+                             case 2:{
+                        float so2;
+                         printf("entre votre Cin :\t");
+                        scanf("%s",CIN_user);
+                        for(i=0;i<nber;i++)
+                        {
+                            if(strstr(CIN_user,user[i].CIN))
+                            {
+                                printf("combien :\n");
+                                scanf("%f",&so2);
+                                user[i].MONTANT+=so2;
+                            }
+                        }
+
+                    }break;
+                             break;
     					   case 3:
     					   	 goto menu;
     					   break;
