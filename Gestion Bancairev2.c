@@ -220,9 +220,30 @@ scanf("%d",&choix);
                     }break;
                   case 3:
                     {
-                      
+                       // Ordre Ascendant par MAX
+                      int a=nber;
+                          printf("%d",a);
+                        int con=0;
+                        float MONT;
+                        printf(" donner un MONTANT : \n");
+                        scanf("%f",&MONT);
+                        users st[100];
+                        for(i=0;i<a;i++)
+                        {
+                            if(user[i].MONTANT>MONT)
+                            {
+                                st[con]=user[i];
+                                con ++;
 
-                    }break;
+                            }
+                        }
+                        //affichage Ordre Ascendant par MAX
+                          for(i=0;i<con;i++)
+                         {
+                         printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s ||\t Montant : %.2f \n\n",st[i].CIN,st[i].NOM,st[i].PRENOM,st[i].MONTANT);
+                         }
+                    }
+                            break;
                   case 4:
                     {
 
