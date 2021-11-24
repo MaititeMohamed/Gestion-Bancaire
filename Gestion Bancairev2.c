@@ -47,7 +47,6 @@ typedef struct
                 nber++;
                 //printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
                 }
-               
 
                }
 
@@ -104,7 +103,7 @@ scanf("%d",&choix);
                         scanf("%s",CIN_user);
                         for(i=0;i<nber;i++)
                         {
-                            if(strstr(CIN_user,user[i].CIN))
+                            if(strcmp(CIN_user,user[i].CIN)==0)
                             {
                                 printf("entre votre solde :\n");
                                 scanf("%f",&so1);
@@ -126,7 +125,7 @@ scanf("%d",&choix);
                         scanf("%s",CIN_user);
                         for(i=0;i<nber;i++)
                         {
-                            if(strstr(CIN_user,user[i].CIN))
+                            if(strcmp(CIN_user,user[i].CIN)==0)
                             {
                                 printf(" entre votre solde :\n");
                                 scanf("%f",&so2);
@@ -221,8 +220,7 @@ scanf("%d",&choix);
                   case 3:
                     {
                        // Ordre Ascendant par MAX
-                      int a=nber;
-                          printf("%d",a);
+                        int a=nber;
                         int con=0;
                         float MONT;
                         printf(" donner un MONTANT : \n");
@@ -247,8 +245,7 @@ scanf("%d",&choix);
                   case 4:
                     {
                           // Ordre Ascendant par min
-                      int a=nber;
-                          printf("%d",a);
+                        int a=nber;
                         int con=0;
                         float MONT;
                         printf(" donner un MONTANT : \n");
@@ -291,7 +288,7 @@ scanf("%d",&choix);
                                  int existe=0;
                                  for(i=0;i<nber;i++)
                                  {
-                                   if(strstr(R_CIN,user[i].CIN))
+                                   if(strcmp(R_CIN,user[i].CIN)==0)
                                        {
                                        existe=1;
                                        break;
@@ -311,7 +308,7 @@ scanf("%d",&choix);
               break;
                            case 6:
                            //fidelisation 
-    int a=nber;
+                           int a=nber;
    users tmp;
     int change=0;
    do
@@ -335,6 +332,7 @@ scanf("%d",&choix);
      printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
      user[i].MONTANT+=((user[i].MONTANT*1.3)/100);
      }
+    
                              
                            break;
         case 7:break;//EXIT FROM APPLICATION    
