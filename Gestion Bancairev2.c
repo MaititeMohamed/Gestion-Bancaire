@@ -284,16 +284,59 @@ scanf("%d",&choix);
          case 5:        
                //recherch par cin
                      
-
+                    
+                                 char R_CIN[20];
+                                 printf("Entrer votre Cin: \n");
+                                 scanf("%s",R_CIN);
+                                 int existe=0;
+                                 for(i=0;i<nber;i++)
+                                 {
+                                   if(strstr(R_CIN,user[i].CIN))
+                                       {
+                                       existe=1;
+                                       break;
+                                       }
+                                   else
+                                   existe=0;
+                                 }
+                                 if(existe==1)
+                                 printf(" Cin : %s  ||\tNom :  %s ||\t Prenom : %s||\t Montant: %.2f \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+                                 else
+                                 printf("\n votre  cin n existe pas \n");
                  /*
                  for(i=0;i<nber+nbr;i++){
               printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
                                  }
                  */
               break;
-              case 6:
-                
-              break;
+                           case 6:
+                           //fidelisation 
+    int a=nber;
+   users tmp;
+    int change=0;
+   do
+   {
+    for(i=0;i<a-1;i++)
+    {
+     if(user[i].MONTANT<user[i+1].MONTANT)
+      {
+        tmp=user[i+1];
+        user[i+1]=user[i];
+        user[i]= tmp;
+
+      }
+    change++;
+   }
+    }while(change>0);
+   
+    printf("*********************les 3 premier  acount  *********************\n");
+    for(i=0;i<3;i++)
+    {
+     printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
+     user[i].MONTANT+=((user[i].MONTANT*1.3)/100);
+     }
+                             
+                           break;
         case 7:break;//EXIT FROM APPLICATION    
        default:
               break;
