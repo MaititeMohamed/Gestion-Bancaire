@@ -106,11 +106,11 @@ scanf("%d",&choix);
                         {
                             if(strstr(CIN_user,user[i].CIN))
                             {
-                                printf("combien :\n");
+                                printf("entre votre solde :\n");
                                 scanf("%f",&so1);
                                 if(so1>user[i].MONTANT)
                                 {
-                                    printf("\n impossible votre sold inferieur a %.2f\n",so1);
+                                    printf("\n impossible votre solde inferieur a %.2f\n",so1);
                                     break;
                                 }
                                 user[i].MONTANT-=so1;
@@ -128,7 +128,7 @@ scanf("%d",&choix);
                         {
                             if(strstr(CIN_user,user[i].CIN))
                             {
-                                printf("combien :\n");
+                                printf(" entre votre solde :\n");
                                 scanf("%f",&so2);
                                 user[i].MONTANT+=so2;
                             }
@@ -329,7 +329,7 @@ scanf("%d",&choix);
    }
     }while(change>0);
    
-    printf("*********************les 3 premier  acount  *********************\n");
+    printf("*********************les 3 premier avent la fidelisation  *********************\n");
     for(i=0;i<3;i++)
     {
      printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);
