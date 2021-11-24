@@ -11,19 +11,18 @@ typedef struct
                  double MONTANT;
                  }users;
        static users user[100];
-       static int nber=0,j=0,nbr,i;//nomber de count
+       static int nber=0,j=0,nbr,i;
 
  void Add_count()
                {    
                 printf("CIN :\n");
-                scanf("%s",user[i].CIN);
+                scanf("%s",user[nber].CIN);
                 printf("NOM :\n");
-                scanf("%s",user[i].NOM);
+                scanf("%s",user[nber].NOM);
                 printf("PRENOM :\n");
-                scanf("%s",user[i].PRENOM);
+                scanf("%s",user[nber].PRENOM);
                 printf("MONTANT :\n");
-                scanf(" %lf",&user[i].MONTANT);
-                i++;
+                scanf(" %lf",&user[nber].MONTANT); 
                 nber ++;
                 //printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user.CIN,user.NOM,user.PRENOM,user.MONTANT);//for stock data in the fill           
               }
