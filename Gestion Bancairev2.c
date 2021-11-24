@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<string.h>
 
 
 typedef struct 
@@ -44,7 +44,7 @@ typedef struct
                 scanf("%s",user[i].PRENOM);
                 printf("MONTANT :\n");
                 scanf(" %lf",&user[i].MONTANT);
-                
+                nber++;
                 //printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
                 }
                
@@ -54,7 +54,7 @@ typedef struct
 int main()
 {
  
- char CIN_user[20] ;
+ char CIN_user[10] ;
 //MENU
 int choix; //for switch case
 do{
@@ -246,7 +246,7 @@ scanf("%d",&choix);
                             break;
                   case 4:
                     {
-                          // Ordre Ascendant par MAX
+                          // Ordre Ascendant par min
                       int a=nber;
                           printf("%d",a);
                         int con=0;
@@ -281,10 +281,15 @@ scanf("%d",&choix);
      
                    }
               break;    
-         case 5:
+         case 5:        
+               //recherch par cin
+                     
+
+                 /*
                  for(i=0;i<nber+nbr;i++){
               printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
                                  }
+                 */
               break;
               case 6:
                 
