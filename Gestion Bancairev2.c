@@ -266,10 +266,10 @@ void fidelisation()
 {
     int a = nber;
     users tmp;
-    int change = 0;
-    do
+    
+    for (j = 1; j < nber; j++)
     {
-        for (i = 0; i < a - 1; i++)
+        for (i = 0; i < a - j; i++)
         {
             if (user[i].MONTANT < user[i + 1].MONTANT)
             {
@@ -277,11 +277,10 @@ void fidelisation()
                 user[i + 1] = user[i];
                 user[i] = tmp;
             }
-            change++;
         }
-    } while (change > 0);
+    }
 
-    printf("*********************les 3 premier avent la fidelisation  *********************\n");
+    printf("*********************les 3 premier  fidelisation  *********************\n");
     for (i = 0; i < 3; i++)
     {
         printf(" Cin : %s  ||\tNom: %s  ||\t Prenom: %s  ||\t Montant : %.2f \n", user[i].CIN, user[i].NOM, user[i].PRENOM, user[i].MONTANT);
@@ -308,11 +307,7 @@ void recherch_par_cin()
         printf(" Cin : %s  ||\tNom :  %s ||\t Prenom : %s||\t Montant: %.2f \n", user[i].CIN, user[i].NOM, user[i].PRENOM, user[i].MONTANT);
     else
         printf("\n votre  cin n existe pas \n");
-    /*
-    for(i=0;i<nber+nbr;i++){
-    printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
-                         }
-    */
+    
 }
 void Add_count()
 {
@@ -325,7 +320,6 @@ void Add_count()
     printf("MONTANT :\n");
     scanf(" %lf", &user[nber].MONTANT);
     nber++;
-    //printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user.CIN,user.NOM,user.PRENOM,user.MONTANT);//for stock data in the fill
 }
 
 void Add_plusieurs_count()
@@ -346,7 +340,6 @@ void Add_plusieurs_count()
         printf("MONTANT :\n");
         scanf(" %lf", &user[i].MONTANT);
         nber++;
-        //printf(" CIN   :%s \n NOM    :%s\n PRENOM  :%s \n MONTANT  :%.2lf \n",user[i].CIN,user[i].NOM,user[i].PRENOM,user[i].MONTANT);//for stock data in the fill
     }
 }
 
