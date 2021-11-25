@@ -342,7 +342,7 @@ void Add_plusieurs_count()
     scanf("%d", &nbr); //nbr for condition loop
     for (i = a; i < nbr + a; i++)
     {
-        printf("acount number  %d \n", i);
+        printf("Donner les information de coount :\n");
         printf("CIN :\n");
         scanf("%s", user[i].CIN);
         printf("NOM :\n");
