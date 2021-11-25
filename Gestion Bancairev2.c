@@ -16,8 +16,8 @@ typedef struct
     char PRENOM[10];
     double MONTANT;
 } users;
-static users user[100];
-static int nber = 0, j = 0, nbr, i; 
+ users user[100];
+ int nber = 0,nbr, i; 
 void MENU()
 {
     int choix;
@@ -358,11 +358,6 @@ void Add_plusieurs_count()
 
 int main()
 {
-
-    char CIN_user[10];
-    //MENU
-    int choix;
     MENU();
-
     return 0;
 }
