@@ -17,6 +17,38 @@ typedef struct
 } users;
 users user[100];
 int nber = 0, nbr, j = 0, i;
+void Add_count()
+{
+    printf("CIN :\n");
+    scanf("%s", user[nber].CIN);
+    printf("NOM :\n");
+    scanf("%s", user[nber].NOM);
+    printf("PRENOM :\n");
+    scanf("%s", user[nber].PRENOM);
+    printf("MONTANT :\n");
+    scanf(" %lf", &user[nber].MONTANT);
+    nber++;
+}
+void Add_plusieurs_count()
+{
+    int a = nber;
+
+    printf("Donner le nomber de count :\n");
+    scanf("%d", &nbr); //nbr for condition loop
+    for (i = a; i < nbr + a; i++)
+    {
+        printf("Donner les information de coount :\n");
+        printf("CIN :\n");
+        scanf("%s", user[i].CIN);
+        printf("NOM :\n");
+        scanf("%s", user[i].NOM);
+        printf("PRENOM :\n");
+        scanf("%s", user[i].PRENOM);
+        printf("MONTANT :\n");
+        scanf(" %lf", &user[i].MONTANT);
+        nber++;
+    }
+}
 void MENU()
 {
     int choix;
@@ -158,9 +190,9 @@ void Affichage()
             int a = nber;
             users tmp;
 
-            for (j = 1; j < nber; j++)
+            for (j = 0; j < nber; j++)
             {
-                for (i = 0; i < a - j; i++)
+                for (i = 0; i < a - 1; i++)
                 {
                     if (user[i].MONTANT > user[i + 1].MONTANT)
                     {
@@ -184,9 +216,9 @@ void Affichage()
             //Ordre Descendant par MONTANT
             int a = nber;
             users tmp;
-            for (j = 1; j < nber; j++)
+            for (j = 0; j < nber; j++)
             {
-                for (i = 0; i < a - j; i++)
+                for (i = 0; i < a - 1; i++)
                 {
                     if (user[i].MONTANT < user[i + 1].MONTANT)
                     {
@@ -267,9 +299,9 @@ void fidelisation()
     int a = nber;
     users tmp;
     
-    for (j = 1; j < nber; j++)
+    for (j = 0; j < nber; j++)
     {
-        for (i = 0; i < a - j; i++)
+        for (i = 0; i < a - 1; i++)
         {
             if (user[i].MONTANT < user[i + 1].MONTANT)
             {
@@ -309,39 +341,8 @@ void recherch_par_cin()
         printf("\n votre  cin n existe pas \n");
     
 }
-void Add_count()
-{
-    printf("CIN :\n");
-    scanf("%s", user[nber].CIN);
-    printf("NOM :\n");
-    scanf("%s", user[nber].NOM);
-    printf("PRENOM :\n");
-    scanf("%s", user[nber].PRENOM);
-    printf("MONTANT :\n");
-    scanf(" %lf", &user[nber].MONTANT);
-    nber++;
-}
 
-void Add_plusieurs_count()
-{
-    int a = nber;
 
-    printf("Donner le nomber de count :\n");
-    scanf("%d", &nbr); //nbr for condition loop
-    for (i = a; i < nbr + a; i++)
-    {
-        printf("Donner les information de coount :\n");
-        printf("CIN :\n");
-        scanf("%s", user[i].CIN);
-        printf("NOM :\n");
-        scanf("%s", user[i].NOM);
-        printf("PRENOM :\n");
-        scanf("%s", user[i].PRENOM);
-        printf("MONTANT :\n");
-        scanf(" %lf", &user[i].MONTANT);
-        nber++;
-    }
-}
 
 int main()
 {
