@@ -15,8 +15,8 @@ typedef struct
     char PRENOM[10];
     double MONTANT;
 } users;
- users user[100];
- int nber = 0,nbr, i; 
+users user[100];
+int nber = 0, nbr, j = 0, i;
 void MENU()
 {
     int choix;
@@ -56,7 +56,7 @@ void MENU()
         break;
         case 5:
             //recherch par cin
-             recherch_par_cin();
+            recherch_par_cin();
             break;
         case 6:
             //fidelisation
@@ -157,10 +157,10 @@ void Affichage()
             // Ordre Ascendant  par MONTANT
             int a = nber;
             users tmp;
-            int change = 0;
-            do
+
+            for (j = 1; j < nber; j++)
             {
-                for (i = 0; i < a - 1; i++)
+                for (i = 0; i < a - j; i++)
                 {
                     if (user[i].MONTANT > user[i + 1].MONTANT)
                     {
@@ -168,10 +168,8 @@ void Affichage()
                         user[i + 1] = user[i];
                         user[i] = tmp;
                     }
-                    change++;
                 }
-
-            } while (change > 0);
+            }
 
             printf("*****************L'ffichage Par Ordre Ascendant *****************\n");
 
@@ -186,10 +184,9 @@ void Affichage()
             //Ordre Descendant par MONTANT
             int a = nber;
             users tmp;
-            int change = 0;
-            do
+            for (j = 1; j < nber; j++)
             {
-                for (i = 0; i < a - 1; i++)
+                for (i = 0; i < a - j; i++)
                 {
                     if (user[i].MONTANT < user[i + 1].MONTANT)
                     {
@@ -197,10 +194,8 @@ void Affichage()
                         user[i + 1] = user[i];
                         user[i] = tmp;
                     }
-                    change++;
                 }
-
-            } while (change > 0);
+            }
 
             printf("*****************L'ffichage Par Ordre Descendant*****************\n");
 
